@@ -15,7 +15,7 @@ class NotesHandler {
 
     postNoteHandler(request, h) {
         try {
-            this._validator.validateNotePayload(request.payload)
+            this._validator.validateNotePayload(request.payload);
             const { title = 'untitled', body, tags } = request.payload;
 
             const noteId = this._service.addNote({ title, body, tags });
@@ -37,7 +37,7 @@ class NotesHandler {
                     });
                     response.code(error.statusCode);
                     return response;
-                    }
+                }
 
                     // Server ERROR!
                     const response = h.response({
@@ -62,8 +62,8 @@ class NotesHandler {
 
     getNoteByIdHandler(request, h) {
         try {
-            const { id } = request.payload;
-            const note = this._service.getNoteByIdHandler(id);
+            const { id } = request.params;
+            const note = this._service.getNoteById(id);
             return {
                 status: 'success',
                 data: {
@@ -126,7 +126,7 @@ class NotesHandler {
     deleteNoteByIdHandler(request, h) {
         try {
             const { id } = request.params;
-            this._service.deleteNoteByIdHandler(id);
+            this._service.deleteNoteById(id);
 
             return {
                 status: 'success',
