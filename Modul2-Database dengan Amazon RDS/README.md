@@ -16,6 +16,17 @@ Saatnya Anda berkenalan dengan teknologi database, tempat penyimpanan yang lebih
 - Menggunakan Postgres Database pada Notes API
 - Men-deploy Postgres Database pada Amazon RDS
 
+## Menggunakan Database di Notes API
+
+Setelah menguasai dasar SQL dan mampu mengelola data yang ada di database PostgreSQL, kini saatnya kita mengintegrasikan penggunaan PostgreSQL di Notes API. Wah, penasaran bagaimana caranya?
+
+Di materi selanjutnya Anda akan banyak belajar bagaimana cara mengintegrasikan Notes API dengan database PostgreSQL. Seperti belajar:
+
+- Memasang dan menggunakan Node-Postgres sebagai package untuk berinteraksi dengan PostgreSQL di Node.js.
+- Mengonfigurasi Environment menggunakan dotenv.
+- Menggunakan teknik Database Migration dalam membuat dan mengelola struktur tabel di dalam database.
+- Membuat dan menggunakan NotesService Postgres untuk menggantikan NotesService inMemory.
+
 ## Referensi
 
 - [Dokumentasi Tipe Data Postgres](https://www.postgresql.org/docs/current/datatype.html)
