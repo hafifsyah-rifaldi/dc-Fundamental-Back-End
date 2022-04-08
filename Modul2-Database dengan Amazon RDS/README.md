@@ -15,3 +15,7 @@ Saatnya Anda berkenalan dengan teknologi database, tempat penyimpanan yang lebih
 - Mengenal dan mampu melakukan SQL Queries dasar
 - Menggunakan Postgres Database pada Notes API
 - Men-deploy Postgres Database pada Amazon RDS
+
+## Referensi
+
+- [Dokumentasi Tipe Data Postgres](https://www.postgresql.org/docs/current/datatype.html)
