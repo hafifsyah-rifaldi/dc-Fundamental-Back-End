@@ -30,3 +30,4 @@ Di materi selanjutnya Anda akan banyak belajar bagaimana cara mengintegrasikan N
 ## Referensi
 
 - [Dokumentasi Tipe Data Postgres](https://www.postgresql.org/docs/current/datatype.html)
+- [Tools Integrasi Node-postgres](https://node-postgres.com/)
