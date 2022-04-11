@@ -6,7 +6,6 @@ class AlbumsHandler {
         this._validator = validator;
         
         this.postAlbumHandler = this.postAlbumHandler.bind(this);
-        this.getAlbumHandler = this.getAlbumHandler.bind(this);
         this.getAlbumByIdHandler = this.getAlbumByIdHandler.bind(this);
         this.putAlbumByIdHandler = this.putAlbumByIdHandler.bind(this);
         this.deleteAlbumByIdHandler = this.deleteAlbumByIdHandler.bind(this);
