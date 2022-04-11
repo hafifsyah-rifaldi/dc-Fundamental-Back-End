@@ -27,6 +27,18 @@ Di materi selanjutnya Anda akan banyak belajar bagaimana cara mengintegrasikan N
 - Menggunakan teknik Database Migration dalam membuat dan mengelola struktur tabel di dalam database.
 - Membuat dan menggunakan NotesService Postgres untuk menggantikan NotesService inMemory.
 
+## Ikhtisar Database dengan Amazon RDS
+
+Anda berada di akhir dari modul Database dengan Amazon RDS. Mari kita uraikan apa saja kemampuan yang seharusnya sudah Anda miliki.
+
+- Anda sudah mengetahui fungsi Database
+- Anda sudah mengenal mengenal PostgreSQL sebagai relational database
+- Anda mampu memasang PostgreSQL di komputer Anda
+- Anda mampu membuat user dan database di PostgreSQL
+- Anda sudah mengenal dan mampu melakukan SQL Queries dasar
+- Anda mampu menggunakan Postgres Database pada Notes API
+- Anda mampu men-deploy Postgres Database pada Amazon RDS
+
 ## Referensi
 
 - [Dokumentasi Tipe Data Postgres](https://www.postgresql.org/docs/current/datatype.html)
