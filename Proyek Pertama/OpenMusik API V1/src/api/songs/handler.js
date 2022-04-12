@@ -22,7 +22,6 @@ class SongsHandler {
             const songId = await this._service.addSong({ title, year, genre, performer, duration, albumId });
             const response = h.response({
                 status: 'success',
-                message: 'Menambahkan lagu.',
                 data: {
                     songId,
                 },
@@ -56,7 +55,6 @@ class SongsHandler {
         const songs = await this._service.getSongs();
         const response = h.response ({
             status: 'success',
-            message: 'Mendapatkan seluruh lagu',
             data: {
                 songs,
             },
@@ -73,7 +71,6 @@ class SongsHandler {
             const song = await this._service.getSongById(id);
             const response = h.response ({
                 status: 'success',
-                message: 'Mendapatkan lagu berdasarkan id',
                 data: {
                     song,
                 },
