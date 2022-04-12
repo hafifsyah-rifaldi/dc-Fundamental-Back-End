@@ -21,7 +21,6 @@ class AlbumsHandler {
 
             const response = h.response({
                 status: 'success',
-                meessage: 'Menambahkan album.',
                 data: {
                     albumId: albumId,
                 },
@@ -58,7 +57,6 @@ class AlbumsHandler {
            const album = await this._service.getAlbumById(id);
            const response = h.response ({
                status: 'success',
-               message: 'Mendapatkan album berdasarkan id.',
                data: {
                    album,
                },
