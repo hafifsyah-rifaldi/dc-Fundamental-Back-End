@@ -56,12 +56,15 @@ class AlbumsHandler {
        try {
            const { id } = request.params;
            const album = await this._service.getAlbumById(id);
-           return {
+           const response = h.response ({
                status: 'success',
+               message: 'Mendapatkan album berdasarkan id.',
                data: {
                    album,
                },
-           };
+           });
+           response.code(200);
+           return response;
        } catch (error) {
             if (error instanceof ClientError) {
                 const response = h.response({
@@ -92,10 +95,12 @@ class AlbumsHandler {
 
             await this._service.editAlbumById(id, request.payload);
 
-            return {
+            const response = h.response ({
                 status: 'success',
                 message: 'Mengubah album berdasarkan id album.',
-            };
+            });
+            response.code(200);
+            return response;
         } catch (error) {
             if (error instanceof ClientError) {
                 const response = h.response({
@@ -124,10 +129,12 @@ class AlbumsHandler {
             const { id } = request.params;
             await this._service.deleteAlbumById(id);
 
-            return {
+            const response = h.response ({
                 status: 'success',
                 message: 'Menghapus album berdasarkan id.',
-            };
+            });
+            response.code(200);
+            return response;
         } catch (error) {
             if (error instanceof ClientError) {
                 const response = h.response({
