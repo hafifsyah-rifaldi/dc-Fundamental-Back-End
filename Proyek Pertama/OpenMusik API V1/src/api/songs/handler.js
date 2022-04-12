@@ -51,16 +51,18 @@ class SongsHandler {
 
 
 
-    async getSongsHandler(h) {
+    async getSongsHandler() {
         const songs = await this._service.getSongs();
-        const response = h.response ({
+        return({
             status: 'success',
             data: {
-                songs,
+                songs: songs.map((song) => ({
+                    id: song.id,
+                    title: song.title,
+                    performer: song.performer,
+                })),
             },
         });
-        response.code(200);
-        return response;
     }
 
 
@@ -69,14 +71,12 @@ class SongsHandler {
         try {
             const { id } = request.params;
             const song = await this._service.getSongById(id);
-            const response = h.response ({
+            return {
                 status: 'success',
                 data: {
                     song,
                 },
-            });
-            response.code(200);
-            return response;
+            };
         } catch (error) {
             if (error instanceof ClientError){
               const response = h.response({
@@ -105,7 +105,7 @@ class SongsHandler {
             this._validator.validateSongPayload(request.payload);
             const { id } = request.params;
 
-            await this._service.ediSongById(id, request.payload);
+            await this._service.editSongById(id, request.payload);
             const response = h.response({
                 status:'success',
                 message: 'Mengubah lagu berdasarkan id lagu.'

@@ -42,7 +42,7 @@ class SongsService {
             throw new NotFoundError('Lagu tidak ditemukan');
         }
 
-        return result.rows.map(mapDBToModel[0]);
+        return result.rows.map(mapDBToModel)[0];
     }
 
 
