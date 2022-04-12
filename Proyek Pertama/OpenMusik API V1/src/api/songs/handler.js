@@ -53,7 +53,7 @@ class SongsHandler {
 
     async getSongsHandler() {
         const songs = await this._service.getSongs();
-        return({
+        return{
             status: 'success',
             data: {
                 songs: songs.map((song) => ({
@@ -62,7 +62,7 @@ class SongsHandler {
                     performer: song.performer,
                 })),
             },
-        });
+        };
     }
 
 
