@@ -17,13 +17,13 @@ class AlbumsHandler {
             this._validator.validateAlbumPayload(request.payload);
             const { name, year } = request.payload;
 
-            const albumId = await this._service.addAlbum ({ name, year });
+            const albumId = await this._service.addAlbum({ name, year });
 
             const response = h.response({
                 status: 'success',
                 meessage: 'Menambahkan album.',
                 data: {
-                    albumId,
+                    albumId: albumId,
                 },
             });
             response.code(201);
@@ -52,7 +52,7 @@ class AlbumsHandler {
 
 
 
-    async getAlbumByIdHandler() {
+    async getAlbumByIdHandler(request, h) {
        try {
            const { id } = request.params;
            const album = await this._service.getAlbumById(id);
