@@ -25,3 +25,4 @@ Tugas kita di modul ini adalah mengembangkan Notes API hingga fitur autentikasi 
 ## Referensi
 
 - [Dokumen API Hapi JWT](https://hapi.dev/module/jwt/api/?v=2.0.1)
+- [Dokumentasi dari node-pg-migrate](https://salsita.github.io/node-pg-migrate/#/columns?id=methods)
