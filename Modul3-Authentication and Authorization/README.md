@@ -21,3 +21,7 @@ Tugas kita di modul ini adalah mengembangkan Notes API hingga fitur autentikasi 
 - Mengetahui Authorization.
 - Mengimplementasikan Authorization pada Notes API.
 - Men-deploy perubahan Authentication dan Authorization pada server production (EC2 Instance).
+
+## Referensi
+
+- [Dokumen API Hapi JWT](https://hapi.dev/module/jwt/api/?v=2.0.1)
