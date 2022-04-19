@@ -10,6 +10,6 @@ module.exports = {
             collaborationsService, notesService, validator,
         );
 
-        server.route(route(collaborationsHandler));
+        server.route(routes(collaborationsHandler));
     },
 };
