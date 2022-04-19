@@ -13,7 +13,7 @@ class CollaborationsHandler {
 
     async postCollaborationHandler(request, h) {
         try {
-            this._validator.validateCollaborationsPayload(request.payload);
+            this._validator.validateCollaborationPayload(request.payload);
             const { id: credentialId } = request.auth.credentials;
             const { noteId, userId } = request.payload;
 
@@ -57,7 +57,7 @@ class CollaborationsHandler {
             const { noteId, userId } = request.payload;
 
             await this._notesService.verifyNoteOwner(noteId, credentialId);
-            await this._collaborationsService.deleteCollaborationHandler(noteId, userId);
+            await this._collaborationsService.deleteCollaboration(noteId, userId);
 
             return {
                 status: 'success',
