@@ -10,7 +10,7 @@ Sebagai gambaran awal, setelah kita menyelesaikan modul ini, fitur kolaborasi No
 
 - [Notes Apps Collaboration Feature](https://youtu.be/N92AfRLwSVg) <br/>
 
-  Namun ketahuilah, untuk membuat fitur kolaborasi catatan bukan hal yang mudah. Untuk membangun fitur tersebut, Anda harus paham dan siap dengan relasi antar tabel di database. Anda harus memiliki bekal dan pengetahuan mengenai normalisasi database guna mampu mendesain tabel dengan baik.
+Namun ketahuilah, untuk membuat fitur kolaborasi catatan bukan hal yang mudah. Untuk membangun fitur tersebut, Anda harus paham dan siap dengan relasi antar tabel di database. Anda harus memiliki bekal dan pengetahuan mengenai normalisasi database guna mampu mendesain tabel dengan baik.
 
 Jangan khawatir, di modul ini juga selain membangun fitur kolaborasi, tentu akan diajarkan dasar, teknik, dan tahapan dalam melakukan normalisasi database. Hingga, pada akhir modul ini diharapkan Anda dapat:
 
