@@ -20,3 +20,7 @@ Jangan khawatir, di modul ini juga selain membangun fitur kolaborasi, tentu akan
 - Mengetahui penggunaan kueri JOIN dalam mendapatkan data lebih dari satu tabel
 - Menerapkan relasi pada tabel users dan notes
 - Membangun fitur kolaborasi catatan dengan teknik normalisasi
+
+## Referensi
+
+- [Constraint Foreign Key Database Postgresql](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK)
