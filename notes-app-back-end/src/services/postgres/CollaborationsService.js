@@ -48,7 +48,7 @@ class CollaborationsService {
         const result = await this._pool.query(query);
 
         if (!result.rows.length) {
-            throw new InvariantError('Kollaborasi gagal diverifikasi');
+            throw new InvariantError('Kolaborasi gagal diverifikasi');
         }
     }
 
