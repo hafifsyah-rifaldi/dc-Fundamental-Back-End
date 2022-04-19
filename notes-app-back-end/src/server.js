@@ -27,7 +27,7 @@ const CollaborationsValidator = require('./validator/collaborations');
 
 const init = async () => {
   const collaborationsService = new CollaborationsService();
-  const notesService = new NotesService();
+  const notesService = new NotesService(collaborationsService);
   const usersService = new UsersService();
   const authenticationsService = new AuthenticationsService();
   
