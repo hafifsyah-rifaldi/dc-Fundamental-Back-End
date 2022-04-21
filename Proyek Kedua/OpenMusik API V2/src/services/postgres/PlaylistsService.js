@@ -142,12 +142,6 @@ class PlaylistsService {
             if (error instanceof NotFoundError) {
                 throw error;
             }
-
-        try {
-            await this._collaborationsService.verifyCollaborator(playlistId, userId);
-        } catch {
-            throw error;
-            }
         }
     }
 
