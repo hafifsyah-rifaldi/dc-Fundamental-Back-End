@@ -52,11 +52,11 @@ class PlaylistHandler {
     async getPlaylistHandler(request, h) {
         try {
             const { id: credentialId } = request.auth.credentials;
-            const playlist = await this._service.getPlaylist(credentialId);
+            const playlists = await this._service.getPlaylist(credentialId);
             const response = h.response({
                 status: 'success',
                 data: {
-                    playlist,          
+                    playlists,          
                 },
             });
             response.code(200);

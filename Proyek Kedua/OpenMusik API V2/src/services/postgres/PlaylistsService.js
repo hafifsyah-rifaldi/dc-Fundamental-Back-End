@@ -63,7 +63,7 @@ class PlaylistsService {
     async addSongToPlaylistId(playlistId, songId) { 
         const id = `song-onplaylist--${nanoid(16)}`;
         const query = {
-            text: 'INSERT INTO songsonplaylist (id, playlist_id, song_id) VALUES($1, $2, $3) RETURNING id',
+            text: 'INSERT INTO playlist_songs (id, playlist_id, song_id) VALUES($1, $2, $3) RETURNING id',
             values: [id, playlistId, songId],
         };
 
@@ -93,8 +93,8 @@ class PlaylistsService {
     async getSongOnPlaylist(playlistId) {
         const query = {
             text: `SELECT songs.id, songs.title, songs.performer FROM songs
-            JOIN  songsonplaylist ON songs.id = songsonplaylist.song_id
-            WHERE songsonplaylist.playlist_id = $1`,
+            JOIN playlist_songs ON songs.id = playlist_songs.song_id
+            WHERE playlist_songs.playlist_id = $1`,
             values: [playlistId],
         };
 
@@ -104,7 +104,7 @@ class PlaylistsService {
 
     async deleteSongFromPlaylist(playlistId,songId) {
         const query = {
-            text: 'DELETE from songsonplaylist WHERE playlist_id = $1 AND song_id = $2 RETURNING id',
+            text: 'DELETE from playlist_songs WHERE playlist_id = $1 AND song_id = $2 RETURNING id',
             values: [playlistId, songId],
         };
 
@@ -140,6 +140,10 @@ class PlaylistsService {
             await this.verifyPlaylistOwner(playlistId, userId);
         } catch (error) {
             if (error instanceof NotFoundError) {
+                throw error;
+            } try {
+                await this._collaborationService.verifyCollaborator(playlistId, userId);
+              } catch {
                 throw error;
             }
         }
