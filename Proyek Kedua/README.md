@@ -12,7 +12,8 @@ Selamat! Anda telah menyelesaikan pembelajaran pada Modul Authentication, Author
 
 Untuk menuju ke modul selanjutnya, Anda harus mengerjakan tugas yakni membuat proyek OpenMusic API versi 2 sesuai kriteria yang akan disampaikan nanti. Tim Reviewer akan memeriksa pekerjaan Anda dan memberikan reviu pada proyek yang Anda buat.
 
-Studi Kasus
+# Studi Kasus
+
 Aplikasi OpenMusic sudah rilis, ribuan lagu dengan lisensi gratis telah membanjiri aplikasi kita. Wajar, siapa yang tidak suka dengan layanan gratis?
 
 Dengan banyaknya lagu yang tersedia di platform kita, daftar lagu menjadi sulit dikelola. Semua genre musik baik rock, pop, dangdut, dan RnB bercampur menjadi satu. Karena masalah ini, pengguna lari dari platform kita, mereka tidak mau mendengarkan musik yang bukan seleranya.
