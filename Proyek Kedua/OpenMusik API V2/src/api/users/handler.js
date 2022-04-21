@@ -6,6 +6,8 @@ class UsersHandler {
         this._validator = validator;
 
         this.postUserHandler = this.postUserHandler.bind(this);
+        this.putAuthenticationHandler = this.putAuthenticationHandler.bind(this);
+        this.deleteAuthenticationHandler = this.deleteAuthenticationHandler.bind(this);
     }
 
 
