@@ -19,7 +19,7 @@ class PlaylistsService {
 
         const query = {
             text: 'INSERT INTO playlists (id, name, owner) VALUES ($1, $2, $3) RETURNING id',
-            values:  [id, name, owner,],
+            values:  [id, name, owner],
         };
 
         const result = await this._pool.query(query);
@@ -34,7 +34,7 @@ class PlaylistsService {
 
     async getPlaylist(owner) {
         const query = {
-            text: `SELECT playlists.* FROM playlists
+            text: `SELECT playlists.id, playlists.name, users.username FROM playlists
             LEFT JOIN users ON users.id = playlists.owner
             WHERE playlists.owner = $1`,
             values: [owner],
@@ -93,8 +93,8 @@ class PlaylistsService {
     async getSongOnPlaylist(playlistId) {
         const query = {
             text: `SELECT songs.id, songs.title, songs.performer FROM songs
-            JOIN  songsonplaylist ON songs.id = songsongplaylist.song_id
-            WHERE songsonplaylist.playlists_id = $1`,
+            JOIN  songsonplaylist ON songs.id = songsonplaylist.song_id
+            WHERE songsonplaylist.playlist_id = $1`,
             values: [playlistId],
         };
 

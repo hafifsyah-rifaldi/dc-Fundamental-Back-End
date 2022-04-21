@@ -56,7 +56,7 @@ class PlaylistHandler {
             const response = h.response({
                 status: 'success',
                 data: {
-                    playlist,
+                    playlist,          
                 },
             });
             response.code(200);
@@ -159,15 +159,15 @@ class PlaylistHandler {
 
             await this._service.verifyPlaylistAccess(playlistId, credentialId);
 
-            const playlists = await this._service.getPlaylistId(playlistId);
+            const playlist = await this._service.getPlaylistId(playlistId);
             const songs = await this._service.getSongOnPlaylist(playlistId);
             const response = h.response({
                 status: 'success',
                 data: {
                     playlists: {
-                        id: playlists.id,
+                        id: playlist.id,
                         name: playlist.name,
-                        username: playlists.username,
+                        username: playlist.username,
                         songs,
                     },
                 },
