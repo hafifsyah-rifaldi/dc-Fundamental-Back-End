@@ -28,7 +28,6 @@ class SongsService {
     return result.rows[0].id;
   }
 
-
   async getSongs(title, performer) {
     let filteredSongs = await this._pool.query('SELECT id, title, performer FROM songs');
     // const result = await this._pool.query('SELECT id, title, performer FROM songs');
@@ -46,7 +45,6 @@ class SongsService {
 
     return filteredSongs.rows.map(mapDBToModel);
   }
-
 
   async getSongById(id) {
     const query = {

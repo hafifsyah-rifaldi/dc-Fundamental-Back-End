@@ -47,7 +47,7 @@ class SongsHandler {
 
   async getSongsHandler(request, h) {
     try {
-      const {title, performer} = request.query;
+      const { title, performer } = request.query;
       const songs = await this._service.getSongs(title, performer);
       return {
         status: 'success',
@@ -55,7 +55,7 @@ class SongsHandler {
           songs,
         },
       };
-    }catch (error) {
+    } catch (error) {
       if (error instanceof ClientError) {
         const response = h.response({
           status: 'fail',
@@ -74,7 +74,6 @@ class SongsHandler {
       console.error(error);
       return response;
     }
-  
   }
 
   async getSongByIdHandler(request, h) {
