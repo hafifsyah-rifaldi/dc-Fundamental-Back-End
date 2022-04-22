@@ -159,15 +159,15 @@ class PlaylistHandler {
 
             await this._service.verifyPlaylistAccess(playlistId, credentialId);
 
-            const playlist = await this._service.getPlaylistId(playlistId);
+            const allPlaylists = await this._service.getPlaylistId(playlistId);
             const songs = await this._service.getSongOnPlaylist(playlistId);
             const response = h.response({
                 status: 'success',
                 data: {
-                    playlists: {
-                        id: playlist.id,
-                        name: playlist.name,
-                        username: playlist.username,
+                    playlist: {
+                        id: allPlaylists.id,
+                        name: allPlaylists.name,
+                        username: allPlaylists.username,
                         songs,
                     },
                 },
