@@ -9,8 +9,6 @@ const mapDBToModel = ({
   genre,
   duration,
   albumId: album_id,
-  // createdAt: created_at,
-  // updatedAt: updated_at,
   username,
 });
 
