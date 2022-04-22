@@ -16,6 +16,6 @@
         "linebreak-style": "off",
         "no-underscore-dangle": "off",
         "camelcase": "off",
-        "max-len": ["error", { "code": 200 }]
+        "max-len": "off"
     }
 }
