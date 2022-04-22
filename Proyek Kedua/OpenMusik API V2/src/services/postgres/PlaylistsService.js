@@ -12,8 +12,6 @@ class PlaylistsService {
 
   async addPlaylist({ name, owner }) {
     const id = `playlist-${nanoid(16)}`;
-    // const createdAt = new Date().toISOString();
-    // const updatedAt = createdAt;
 
     const query = {
       text: 'INSERT INTO playlists (id, name, owner) VALUES ($1, $2, $3) RETURNING id',
