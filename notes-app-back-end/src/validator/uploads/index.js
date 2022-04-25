@@ -1,9 +1,9 @@
 const InvariantError = require('../../exceptions/InvariantError');
-const { ImageHeaderSchema } = require('./schema');
+const { ImageHeadersSchema } = require('./schema');
 
 const UploadsValidator = {
     validateImageHeaders: (headers) => {
-        const validationResult = ImageHeaderSchema.validate(headers);
+        const validationResult = ImageHeadersSchema.validate(headers);
     
         if (validationResult.error) {
             throw new InvariantError(validationResult.error.message);
