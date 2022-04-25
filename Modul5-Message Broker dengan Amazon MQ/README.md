@@ -18,3 +18,7 @@ Nah, di modul ini kita akan sama-sama membangun fitur ekspor dengan menggunakan 
 - Mengerti bagaimana cara memasang message broker server menggunakan RabbitMQ.
 - Mengimplementasikan message broker ke proyek Back-End.
 - Men-deploy message broker ke AWS dengan Amazon MQ.
+
+## Referensi
+
+- [Dokumentasi website resmi Nodemailer](https://nodemailer.com/)
