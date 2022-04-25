@@ -16,6 +16,16 @@ Nah, di modul ini, kita akan belajar menggunakan solusi storage untuk menyimpan 
 - Mengetahui cara menyimpan dan menggunakan berkas dari storage dari Amazon S3.
 - Mengimplementasikan storage pada RESTful API.
 
+## Ikhtisar Storage dengan Amazon S3
+
+Anda berada di akhir dari modul Storage dengan Amazon S3. Mari kita uraikan apa saja kemampuan yang seharusnya sudah Anda miliki.
+
+- Mengerti fungsi storage.
+- Mengetahui bagaimana cara menulis dan membaca berkas pada storage lokal.
+- Melayani permintaan menggunakan berkas statis di Hapi.
+- Mengetahui cara menyimpan dan menggunakan berkas dari Amazon S3.
+- Mengimplementasikan storage pada RESTful API.
+
 ## Referensi
 
 - [dokumentasi resmi tentang mkdirSync](https://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_options)
