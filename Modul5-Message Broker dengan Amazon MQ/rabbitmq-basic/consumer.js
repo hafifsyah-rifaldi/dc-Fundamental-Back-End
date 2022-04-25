@@ -5,7 +5,6 @@ const init = async () => {
     const channel = await connection.createChannel();
 
     const queue = 'dicoding';
-    const message = 'Selamat belajar message broker!';
 
     await channel.assertQueue(queue, {
         durable: true,
