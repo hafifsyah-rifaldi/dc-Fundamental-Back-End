@@ -15,3 +15,7 @@ Nah, di modul ini, kita akan belajar menggunakan solusi storage untuk menyimpan 
 - Melayani permintaan menggunakan berkas statis di Hapi.
 - Mengetahui cara menyimpan dan menggunakan berkas dari storage dari Amazon S3.
 - Mengimplementasikan storage pada RESTful API.
+
+## Referensi
+
+- [dokumentasi resmi tentang mkdirSync](https://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_options)
