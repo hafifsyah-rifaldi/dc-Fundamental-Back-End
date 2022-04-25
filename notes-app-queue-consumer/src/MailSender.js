@@ -26,7 +26,7 @@ class MailSender {
             ],
         };
 
-        return this._transporter.sendmail(message);
+        return this._transporter.sendMail(message);
     }
 }
 
