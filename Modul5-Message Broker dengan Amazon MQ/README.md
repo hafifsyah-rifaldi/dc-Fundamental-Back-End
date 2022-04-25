@@ -19,6 +19,17 @@ Nah, di modul ini kita akan sama-sama membangun fitur ekspor dengan menggunakan 
 - Mengimplementasikan message broker ke proyek Back-End.
 - Men-deploy message broker ke AWS dengan Amazon MQ.
 
+## Ikhtisar Message Broker dengan Amazon MQ
+
+Anda berada di akhir dari modul Message Broker dengan Amazon MQ. Mari kita uraikan apa saja kemampuan yang seharusnya sudah Anda miliki.
+
+- Memahami konsep message broker.
+- Mengetahui model-model dari message broker.
+- Mengetahui beberapa kasus penggunaan untuk message broker dalam kehidupan nyata.
+- Mengerti bagaimana cara memasang message broker server menggunakan RabbitMQ.
+- Mengimplementasikan message broker ke proyek Back-End.
+- Men-deploy message broker ke AWS dengan Amazon MQ.
+
 ## Referensi
 
 - [Dokumentasi website resmi Nodemailer](https://nodemailer.com/)
