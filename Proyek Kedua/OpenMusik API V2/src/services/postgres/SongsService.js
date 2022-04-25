@@ -30,8 +30,6 @@ class SongsService {
 
   async getSongs(title, performer) {
     let filteredSongs = await this._pool.query('SELECT id, title, performer FROM songs');
-    // const result = await this._pool.query('SELECT id, title, performer FROM songs');
-    // return result.rows.map(mapDBToModel);
     if (title !== undefined) {
       const query = {
         text: 'SELECT id, title, performer FROM songs WHERE LOWER(title) LIKE $1',
@@ -53,7 +51,7 @@ class SongsService {
     };
     const result = await this._pool.query(query);
 
-    if (!result.rows.length) {
+    if (!result.rowCount) {
       throw new NotFoundError('Lagu tidak ditemukan');
     }
 
