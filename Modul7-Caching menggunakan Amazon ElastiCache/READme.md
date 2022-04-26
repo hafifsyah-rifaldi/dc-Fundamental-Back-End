@@ -20,3 +20,7 @@ Nah, pada modul kali ini kita akan belajar bagaimana mengimplementasikan solusi 
 - Mengerti beberapa sintaks dasar pada Redis.
 - Menggunakan Redis untuk caching pada RESTful API.
 - Men-deploy Redis pada Amazon ElastiCache.
+
+## Referensi
+
+- [dokumentasi command Redis](https://redis.io/commands)
