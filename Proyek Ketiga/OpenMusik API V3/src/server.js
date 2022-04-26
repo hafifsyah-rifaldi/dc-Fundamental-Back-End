@@ -133,6 +133,7 @@ const init = async () => {
       options: {
         service: ProducerService,
         validator: ExportsValidator,
+        playlistsService,
       },
     },
 
