@@ -22,7 +22,7 @@ class CollaborationsService {
             throw new InvariantError('Kolaborasi gagal ditambahkan');
         }
 
-        await this.cacheService.delete(`notes:${userId}`);
+        await this._cacheService.delete(`notes:${userId}`);
         return result.rows[0].id;
     }
 
