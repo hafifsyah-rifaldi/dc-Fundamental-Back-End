@@ -21,6 +21,19 @@ Nah, pada modul kali ini kita akan belajar bagaimana mengimplementasikan solusi 
 - Menggunakan Redis untuk caching pada RESTful API.
 - Men-deploy Redis pada Amazon ElastiCache.
 
+## Ikhtisar Caching Menggunakan Amazon ElastiCache
+
+Anda berada di akhir dari modul Caching Menggunakan Amazon ElastiCache. Mari kita uraikan apa saja kemampuan yang seharusnya sudah Anda miliki.
+
+- Memahami konsep cache.
+- Mengetahui apa itu Redis.
+- Mengetahui cara memasang Redis secara lokal.
+- Mengerti beberapa sintaks dasar pada Redis.
+- Menggunakan Redis untuk caching pada RESTful API.
+- Men-deploy Redis pada Amazon ElastiCache.<br/>
+
+Dengan uraian tersebut, diharapkan Anda dapat memahami semua materi yang telah disampaikan. Jika belum, Anda bisa ulas kembali materi yang diberikan pada modul ini dan menanyakannya di forum diskusi.
+
 ## Referensi
 
 - [dokumentasi command Redis](https://redis.io/commands)
