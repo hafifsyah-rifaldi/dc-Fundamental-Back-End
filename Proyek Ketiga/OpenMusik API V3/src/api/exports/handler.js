@@ -11,19 +11,19 @@ class ExportsHandler {
 
     async postExportPlaylistsHandler (request, h) {
         try {
-            this._validator.validateExportPlaylistsPayload(request.payload);
-            const userId = request.auth.credentials.id;
-            const { playlistId } = request.params;
+          this._validator.validateExportPlaylistsPayload(request.payload);
 
-            await this._playlistsService.getPlaylistId(playlistId);
-            await this._playlistsService.verifyPlaylistOwner(playlistId, userId);
-
-            const message = {
-                playlistId,
-                targetEmail: request.payload.targetEmail,
-              };
-
-            await this._service.sendMessage('export:playlists', JSON.stringify(message));
+          const { playlistId } = request.params;
+          const {id: credentialId } = request.auth.credentials;
+          
+          await this._playlistsService.verifyPlaylistOwner(playlistId, credentialId);
+          
+          const message = {
+            playlistId,
+            targetEmail: request.payload.targetEmail,
+          };
+          
+          await this._service.sendMessage('export:playlists', JSON.stringify(message));
 
             const response = h.response({
                 status: 'success',

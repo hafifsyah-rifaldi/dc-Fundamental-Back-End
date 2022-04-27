@@ -12,11 +12,23 @@ class Listener {
         console.log('Playlist ID:', playlistId);
         console.log('targetEmail:', targetEmail);
 
-        const songsInPlaylist = await this._playlistsService.getSongOnPlaylist(playlistId);
-        console.log('Song in Playlist', songsInPlaylist);
+        const playlistMusic = await this._playlistsService.getPlaylistId(playlistId);
+        playlistMusic.songsInPlaylist = await this._playlistsService.getSongOnPlaylist(playlistId);
+        console.log('Isi Playlist: ');
+        console.log(playlistMusic);
+        console.log('----------------------------');
+        // console.log('Song in Playlist', songsInPlaylist);
+        // const playlistDetail = {
+        //   playlist: {
+        //     ...playlist,
+        //     songs: songsInPlaylist
+        //   }
+        // };
 
-        const result = await this._mailSender.sendEmail(targetEmail, JSON.stringify(songsInPlaylist));
-        console.log(result);
+        const result = await this._mailSender.sendEmail(targetEmail, JSON.stringify(playlistMusic));
+        console.log("Isi email:");
+        console.log(JSON.stringify(playlistMusic));
+        // console.log(result);
       } catch (error) {
         console.error(error);
       }
