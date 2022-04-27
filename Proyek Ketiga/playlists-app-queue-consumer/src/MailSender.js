@@ -23,6 +23,7 @@ class MailSender {
                 {
                     filename: 'playlist.json',
                     content,
+                    contentType: 'application/json',
                 },
             ],
         };
