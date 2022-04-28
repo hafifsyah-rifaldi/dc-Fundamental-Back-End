@@ -13,10 +13,11 @@ class ExportsHandler {
         try {
           this._validator.validateExportPlaylistsPayload(request.payload);
 
-          const { playlistId } = request.params;
-          const {id: credentialId } = request.auth.credentials;
+          const userId = request.auth.credentials.id;
+          const playlistId = request.params.playlistId;
           
-          await this._playlistsService.verifyPlaylistOwner(playlistId, credentialId);
+          await this._playlistsService.getPlaylistId(playlistId);
+          await this._playlistsService.verifyPlaylistOwner(playlistId, userId);
           
           const message = {
             playlistId,
@@ -24,11 +25,11 @@ class ExportsHandler {
           };
           
           await this._service.sendMessage('export:playlists', JSON.stringify(message));
-
-            const response = h.response({
-                status: 'success',
-                message: 'Permintaan Anda sedang kami proses',
-              });
+          const response = h.response({
+            status: 'success',
+            message: 'Permintaan Anda sedang kami proses',
+          });
+          console.log("INI ADALAH ISI JSON:", JSON.stringify(message));
               response.code(201);
               return response;
         } catch (error) {
