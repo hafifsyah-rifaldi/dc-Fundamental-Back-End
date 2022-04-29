@@ -57,7 +57,7 @@ const init = async () => {
   const usersService = new UsersService();
   const authenticationsService = new AuthenticationsService();
   const collaborationsService = new CollaborationsService(cacheService);
-  const storageService = new StorageService(path.resolve(__dirname, 'api/upload/file'))
+  const storageService = new StorageService(path.resolve(__dirname, 'api/upload/file'));
 
   const server = Hapi.server({
     port: process.env.port,
@@ -75,7 +75,7 @@ const init = async () => {
     },
     {
       plugin: Inert,
-    }
+    },
   ]);
 
   server.auth.strategy('api_music_jwt', 'jwt', {
@@ -101,7 +101,7 @@ const init = async () => {
         service: albumsService,
         validator: AlbumsValidator,
         storageService,
-        uploadValidator: UploadsValidator
+        uploadValidator: UploadsValidator,
       },
     },
     {

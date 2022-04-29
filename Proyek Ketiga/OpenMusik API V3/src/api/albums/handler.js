@@ -3,7 +3,7 @@ const ClientError = require('../../exceptions/ClientError');
 class AlbumsHandler {
   constructor(service, storageService, validator, uploadValidator) {
     this._service = service;
-    this._storageService = storageService
+    this._storageService = storageService;
     this._validator = validator;
     this._uploadValidator = uploadValidator;
 
@@ -63,11 +63,11 @@ class AlbumsHandler {
       const { songs, isCache: isCacheSong } = await this._service.getSongInAlbum(id);
       const getDetailAlbum = { ...album, songs };
 
-      album.coverUrl = album.coverUrl;
-      delete album.coverUrl;
+      album.coverUrl = album.coverurl;
+      delete album.coverurl;
       album.songs = songs;
 
-      const response = h.response ({
+      const response = h.response({
         status: 'success',
         data: {
           album: getDetailAlbum,
@@ -75,7 +75,7 @@ class AlbumsHandler {
       });
       response.code(200);
 
-      if (isCacheAlbum || isCacheSong) {response.header('X-Data-Source', 'cache');}
+      if (isCacheAlbum || isCacheSong) { response.header('X-Data-Source', 'cache'); }
       return response;
     } catch (error) {
       if (error instanceof ClientError) {
@@ -163,7 +163,6 @@ class AlbumsHandler {
     }
   }
 
-
   //* Album Cover
   async postAlbumCoverHandler(request, h) {
     try {
@@ -198,10 +197,8 @@ class AlbumsHandler {
       response.code(500);
       console.error(error);
       return response;
-      
     }
   }
-
 
   //* Likes Album
   async postAlbumLikeHandler(request, h) {
@@ -273,7 +270,6 @@ class AlbumsHandler {
       return response;
     }
   }
-
 }
 
 module.exports = AlbumsHandler;
