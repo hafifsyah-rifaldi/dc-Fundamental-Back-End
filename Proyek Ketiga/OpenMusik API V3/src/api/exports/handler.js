@@ -29,7 +29,6 @@ class ExportsHandler {
             status: 'success',
             message: 'Permintaan Anda sedang kami proses',
           });
-          console.log("INI ADALAH ISI JSON:", JSON.stringify(message));
               response.code(201);
               return response;
         } catch (error) {
