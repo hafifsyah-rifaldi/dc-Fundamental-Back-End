@@ -59,22 +59,24 @@ class AlbumsHandler {
   async getAlbumByIdHandler(request, h) {
     try {
       const { id } = request.params;
-      const album = await this._service.getAlbumById(id);
-      const songs = await this._service.getSongInAlbum(id);
+      const { album, isCache: isCacheAlbum } = await this._service.getAlbumById(id);
+      const { songs, isCache: isCacheSong } = await this._service.getSongInAlbum(id);
       const getDetailAlbum = { ...album, songs };
 
       album.coverUrl = album.coverUrl;
       delete album.coverUrl;
-
       album.songs = songs;
 
-      return {
+      const response = h.response ({
         status: 'success',
         data: {
           album: getDetailAlbum,
         },
-      };
+      });
+      response.code(200);
 
+      if (isCacheAlbum || isCacheSong) {response.header('X-Data-Source', 'cache');}
+      return response;
     } catch (error) {
       if (error instanceof ClientError) {
         const response = h.response({
@@ -240,15 +242,17 @@ class AlbumsHandler {
   async getAlbumLikeHandler(request, h) {
     try {
       const { id } = request.params;
-      const { likes } = await this._service.getLikeAlbum(id);
+      const { likes, isCache } = await this._service.getLikeAlbum(id);
       const response = h.response({
         status: 'success',
         data: {
-          likes: likes,
+          likes: likes.length,
         },
       });
       console.log(likes);
       response.code(200);
+
+      if (isCache) response.header('X-Data-Source', 'cache');
       return response;
     } catch (error) {
       if (error instanceof ClientError) {
