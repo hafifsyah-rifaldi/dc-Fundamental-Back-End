@@ -249,7 +249,6 @@ class AlbumsHandler {
           likes: likes.length,
         },
       });
-      console.log(likes);
       response.code(200);
 
       if (isCache) response.header('X-Data-Source', 'cache');
