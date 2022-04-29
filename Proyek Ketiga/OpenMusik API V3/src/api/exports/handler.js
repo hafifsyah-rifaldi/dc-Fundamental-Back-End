@@ -18,7 +18,7 @@ class ExportsHandler {
           
           await this._playlistsService.getPlaylistId(playlistId);
           await this._playlistsService.verifyPlaylistOwner(playlistId, userId);
-          
+          console.log("Isi dari playlistId: ", playlistId);
           const message = {
             playlistId,
             targetEmail: request.payload.targetEmail,
@@ -29,7 +29,7 @@ class ExportsHandler {
             status: 'success',
             message: 'Permintaan Anda sedang kami proses',
           });
-          // console.log("INI ADALAH ISI JSON:", JSON.stringify(message));
+          console.log("INI ADALAH ISI JSON untuk export:", JSON.stringify(message));
               response.code(201);
               return response;
         } catch (error) {
